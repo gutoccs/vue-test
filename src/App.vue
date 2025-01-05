@@ -1,9 +1,19 @@
 <script setup>
-
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <h1 class="text-4xl">App Limpia</h1>
+  <div class="bg-gray-100 min-h-screen">
+
+    <header class="text-black p-4">
+      <h1 class="text-2xl font-bold">Aquí iría el nav</h1>
+    </header>
+
+    <main class="container mx-auto p-8">
+      <router-view />
+    </main>
+
+  </div>
 </template>
 
 <style scoped>
