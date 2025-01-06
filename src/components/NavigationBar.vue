@@ -24,7 +24,7 @@
           <div class="hidden sm:block">
             <div class="flex space-x-4">
               <a href="#" class="inline-flex items-center text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">
-                <ArrowRightCircleIcon class="w-5 h-5 mr-2 text-purple-300" aria-hidden="true" />
+                <ArrowRightCircleIcon class="w-5 h-5 mr-2 text-lilac-light" aria-hidden="true" />
                 AGREGAR PELÍCULA
               </a>
             </div>
