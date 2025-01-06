@@ -7,9 +7,8 @@
           <DisclosureButton class="relative inline-flex items-center justify-center rounded-md p-2  hover:bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
             <span class="absolute -inset-1.5" />
             <span class="sr-only">View Sidebar</span>
-            <Bars3BottomLeftIcon v-if="isMobile && !open" class="size-7" aria-hidden="true" />
-            <Bars3BottomRightIcon v-if="!isMobile && !open" class="size-7" aria-hidden="true" />
             <XMarkIcon v-if="open" class="block size-6" aria-hidden="true" />
+            <Bars3BottomLeftIcon v-else class="size-7" aria-hidden="true" />
           </DisclosureButton>
         </div>
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
@@ -33,9 +32,8 @@
           <DisclosureButton type="button" class="relative inline-flex items-center justify-center rounded-md ml-2 p-2  hover:bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white hidden sm:block">
             <span class="absolute -inset-1.5" />
             <span class="sr-only">View Sidebar</span>
-            <Bars3BottomLeftIcon v-if="isMobile && !open" class="size-7" aria-hidden="true" />
-            <Bars3BottomRightIcon v-if="!isMobile && !open" class="size-7" aria-hidden="true" />
             <XMarkIcon v-if="open" class="block size-6" aria-hidden="true" />
+            <Bars3BottomRightIcon v-else class="size-7" aria-hidden="true" />
           </DisclosureButton>
 
           <button type="button" class="relative hover:bg-gray-700 rounded-md ml-2 p-1 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hidden sm:block">
@@ -72,7 +70,7 @@
       </div>
     </div>
 
-    <DisclosurePanel class="sm:hidden">
+    <DisclosurePanel>
       <div class="space-y-1 px-2 pb-3 pt-2">
         <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block rounded-md px-3 py-2 text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
       </div>
@@ -81,7 +79,6 @@
 </template>
 
 <script setup>
-  import { computed , ref, onMounted, onUnmounted } from 'vue';
   import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
   import { ArrowRightCircleIcon, BellIcon, XMarkIcon, Bars3BottomRightIcon, Bars3BottomLeftIcon} from '@heroicons/vue/24/outline'
 
@@ -93,19 +90,5 @@
   ]
 
   const hasNotifications = true;
-  const windowWidth = ref(window.innerWidth);
-  const isMobile = computed(() => windowWidth.value < 640);
-
-  const handleResize = () => {
-    windowWidth.value = window.innerWidth;
-  };
-
-  onMounted(() => {
-    window.addEventListener('resize', handleResize);
-  });
-
-  onUnmounted(() => {
-    window.removeEventListener('resize', handleResize);
-  });
 
 </script>
