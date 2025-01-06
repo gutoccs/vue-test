@@ -25,7 +25,8 @@
           <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
             <span class="absolute -inset-1.5" />
             <span class="sr-only">View notifications</span>
-            <BellIcon class="size-6" aria-hidden="true" />
+            <BellIcon class="size-7" aria-hidden="true" />
+            <div v-if="hasNotifications" class="absolute top-2 right-2 w-2 h-2 rounded-full bg-lilac-light border border-white"></div>
           </button>
 
           <!-- Profile dropdown -->
@@ -73,5 +74,7 @@
     { name: 'Projects', href: '#', current: false },
     { name: 'Calendar', href: '#', current: false },
   ]
+
+  const hasNotifications = true;
 
 </script>

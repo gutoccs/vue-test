@@ -5,7 +5,11 @@ export default {
     './src/**/*.{vue,js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'lilac-light': '#D1A2FF', // Nombre personalizado para el color
+      },
+    },
   },
   plugins: [],
 }
