@@ -13,7 +13,9 @@
         </div>
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex shrink-0 items-center">
-            <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
+            <span class="text-3xl md:text-4xl text-lilac-light">
+              <span class="font-normal md:font-semibold">TEST</span>FLIX
+            </span>
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
