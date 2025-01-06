@@ -1,13 +1,20 @@
 <template>
 
-  <main class="container py-8 mt-28 sm:mt-80">
+ <main class="container py-8 flex flex-col sm:flex-row items-start">
 
-    <MovieTitle />
+  <section class="w-full sm:w-5/6 mt-28 sm:mt-80">
+   <MovieTitle />
+  </section>
 
-  </main>
+  <section class="w-full sm:w-1/6">
+   <MovieList />
+  </section>
+
+ </main>
 
 </template>
 
 <script setup>
   import MovieTitle from '@/components/MovieTitle.vue';
+  import MovieList from '@/components/MovieList.vue';
 </script>
