@@ -1,10 +1,10 @@
 <template>
-  <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
+  <Disclosure as="nav" v-slot="{ open }">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
-          <DisclosureButton class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <DisclosureButton class="relative inline-flex items-center justify-center rounded-md p-2  hover:bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
             <span class="absolute -inset-1.5" />
             <span class="sr-only">View Sidebar</span>
             <Bars3BottomLeftIcon v-if="isMobile && !open" class="size-7" aria-hidden="true" />
@@ -23,14 +23,14 @@
 
           <div class="hidden sm:block">
             <div class="flex space-x-4">
-              <a href="#" class="inline-flex items-center text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">
-                <ArrowRightCircleIcon class="w-5 h-5 mr-2 text-lilac-light" aria-hidden="true" />
+              <a href="#" class="inline-flex items-center text-gray-300 hover:bg-gray-700 text-white rounded-md px-3 py-2 text-md font-medium" aria-current="page">
+                <ArrowRightCircleIcon class="w-7 h-7 mr-2 text-lilac-light" aria-hidden="true" />
                 AGREGAR PELÍCULA
               </a>
             </div>
           </div>
 
-          <DisclosureButton type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hidden sm:block">
+          <DisclosureButton type="button" class="relative inline-flex items-center justify-center rounded-md ml-2 p-2  hover:bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white hidden sm:block">
             <span class="absolute -inset-1.5" />
             <span class="sr-only">View Sidebar</span>
             <Bars3BottomLeftIcon v-if="isMobile && !open" class="size-7" aria-hidden="true" />
@@ -38,7 +38,7 @@
             <XMarkIcon v-if="open" class="block size-6" aria-hidden="true" />
           </DisclosureButton>
 
-          <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hidden sm:block">
+          <button type="button" class="relative hover:bg-gray-700 rounded-md ml-2 p-1 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hidden sm:block">
             <span class="absolute -inset-1.5" />
             <span class="sr-only">View notifications</span>
             <BellIcon class="size-7" aria-hidden="true" />
