@@ -25,6 +25,15 @@
         </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
+          <div class="hidden sm:block">
+            <div class="flex space-x-4">
+              <a href="#" class="inline-flex items-center text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">
+                <ArrowRightCircleIcon class="w-5 h-5 mr-2 text-purple-300" aria-hidden="true" />
+                AGREGAR PELÍCULA
+              </a>
+            </div>
+          </div>
+
           <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
             <span class="absolute -inset-1.5" />
             <span class="sr-only">View Sidebar</span>
@@ -32,7 +41,7 @@
             <Bars3BottomRightIcon v-else class="size-7" aria-hidden="true" />
           </button>
 
-          <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+          <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hidden sm:block">
             <span class="absolute -inset-1.5" />
             <span class="sr-only">View notifications</span>
             <BellIcon class="size-7" aria-hidden="true" />
@@ -77,7 +86,7 @@
 <script setup>
   import { computed , ref, onMounted, onUnmounted } from 'vue';
   import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-  import { Bars3Icon, BellIcon, XMarkIcon, Bars3BottomRightIcon, Bars3BottomLeftIcon} from '@heroicons/vue/24/outline'
+  import { ArrowRightCircleIcon, Bars3Icon, BellIcon, XMarkIcon, Bars3BottomRightIcon, Bars3BottomLeftIcon} from '@heroicons/vue/24/outline'
 
   const navigation = [
     { name: 'Dashboard', href: '#', current: true },
