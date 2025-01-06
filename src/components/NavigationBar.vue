@@ -13,8 +13,8 @@
         </div>
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex shrink-0 items-center">
-            <span class="text-3xl md:text-4xl text-lilac-light">
-              <span class="font-normal md:font-semibold">TEST</span>FLIX
+            <span class="text-3xl sm:text-4xl text-lilac-light">
+              <span class="font-normal sm:font-semibold">TEST</span>FLIX
             </span>
           </div>
           <div class="hidden sm:ml-6 sm:block">
@@ -24,6 +24,14 @@
           </div>
         </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+          <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+            <span class="absolute -inset-1.5" />
+            <span class="sr-only">View Sidebar</span>
+            <Bars3BottomLeftIcon v-if="isMobile" class="size-7" aria-hidden="true" />
+            <Bars3BottomRightIcon v-else class="size-7" aria-hidden="true" />
+          </button>
+
           <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
             <span class="absolute -inset-1.5" />
             <span class="sr-only">View notifications</span>
@@ -67,8 +75,9 @@
 </template>
 
 <script setup>
+  import { computed , ref, onMounted, onUnmounted } from 'vue';
   import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-  import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+  import { Bars3Icon, BellIcon, XMarkIcon, Bars3BottomRightIcon, Bars3BottomLeftIcon} from '@heroicons/vue/24/outline'
 
   const navigation = [
     { name: 'Dashboard', href: '#', current: true },
@@ -78,5 +87,19 @@
   ]
 
   const hasNotifications = true;
+  const windowWidth = ref(window.innerWidth);
+  const isMobile = computed(() => windowWidth.value < 640);
+
+  const handleResize = () => {
+    windowWidth.value = window.innerWidth;
+  };
+
+  onMounted(() => {
+    window.addEventListener('resize', handleResize);
+  });
+
+  onUnmounted(() => {
+    window.removeEventListener('resize', handleResize);
+  });
 
 </script>
