@@ -1,12 +1,13 @@
 <script setup>
-import { RouterView } from 'vue-router'
+  import { RouterView } from 'vue-router'
+  import NavigationBar  from './components/NavigationBar.vue'
 </script>
 
 <template>
   <div class="bg-gray-100 min-h-screen" id="app-container">
 
-    <header class="text-black p-4">
-      <h1 class="text-2xl font-bold">Aquí iría el nav</h1>
+    <header class="p-4">
+      <NavigationBar />
     </header>
 
     <main class="container mx-auto p-8">
