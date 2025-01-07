@@ -5,8 +5,8 @@
         <XMarkIcon class="h-6 w-6" aria-hidden="true" />
       </button>
       <div class="flex space-x-2">
-        <button class="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300">Botón 1</button>
-        <button class="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300">Botón 2</button>
+        <NotificationBell />
+        <MenuProfile />
       </div>
     </div>
     <div class="p-4">
@@ -23,6 +23,8 @@
 <script setup>
   import { XMarkIcon } from '@heroicons/vue/24/outline'
   import { defineEmits } from 'vue';
+  import MenuProfile from './ProfileDropdown.vue';
+  import NotificationBell from './NotificationBell.vue';
 
   const emit = defineEmits(['close']);
 

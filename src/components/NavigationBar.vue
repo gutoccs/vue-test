@@ -37,36 +37,10 @@
               <Bars3BottomRightIcon v-else class="size-7" aria-hidden="true" />
             </button>
 
-            <button type="button" class="relative hover:bg-gray-700 rounded-md ml-2 p-1 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hidden sm:block">
-              <span class="absolute -inset-1.5" />
-              <span class="sr-only">View notifications</span>
-              <BellIcon class="size-7" aria-hidden="true" />
-              <div v-if="hasNotifications" class="absolute top-2 right-2 w-2 h-2 rounded-full bg-lilac-light border border-white"></div>
-            </button>
+            <NotificationBell />
 
-            <!-- Profile dropdown -->
-            <Menu as="div" class="relative ml-3">
-              <div>
-                <MenuButton class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                  <span class="absolute -inset-1.5" />
-                  <span class="sr-only">Open user menu</span>
-                  <img class="size-8 rounded-full" src="https://avatars.githubusercontent.com/u/1091742?v=4" alt="" />
-                </MenuButton>
-              </div>
-              <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
-                <MenuItems class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none">
-                  <MenuItem v-slot="{ active }">
-                    <a href="#" :class="[active ? 'bg-gray-100 outline-none' : '', 'block px-4 py-2 text-sm text-gray-700']">Ver Perfil</a>
-                  </MenuItem>
-                  <MenuItem v-slot="{ active }">
-                    <a href="#" :class="[active ? 'bg-gray-100 outline-none' : '', 'block px-4 py-2 text-sm text-gray-700']">Configuración</a>
-                  </MenuItem>
-                  <MenuItem v-slot="{ active }">
-                    <a href="#" :class="[active ? 'bg-gray-100 outline-none' : '', 'block px-4 py-2 text-sm text-gray-700']">Cerrar sesión</a>
-                  </MenuItem>
-                </MenuItems>
-              </transition>
-            </Menu>
+            <MenuProfile />
+
           </div>
         </div>
       </div>
@@ -82,12 +56,14 @@
 
 <script setup>
   import { ref } from 'vue';
-  import { Disclosure, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-  import { ArrowRightCircleIcon, BellIcon, XMarkIcon, Bars3BottomRightIcon, Bars3BottomLeftIcon} from '@heroicons/vue/24/outline'
+  import { Disclosure } from '@headlessui/vue';
+  import { ArrowRightCircleIcon, XMarkIcon, Bars3BottomRightIcon, Bars3BottomLeftIcon} from '@heroicons/vue/24/outline';
+  import MenuProfile from './ProfileDropdown.vue';
+  import NotificationBell from './NotificationBell.vue';
   import SideBar from './SideBar.vue';
 
 
-  const hasNotifications = true;
+
 
   const isSidebarOpen = ref(true);
 
