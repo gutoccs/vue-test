@@ -2,7 +2,7 @@
 
   <div class="mt-4">
 
-    <button @click="prev" class="inline-flex items-center py-2 px-4 w-64 h-16 justify-center">
+    <button @click="prev" class="inline-flex items-center py-2 px-4 w-full h-16 justify-center">
       <ChevronUpIcon class="h-8 w-8 text-white hover:font-black" />
     </button>
 
@@ -14,7 +14,7 @@
 
     </Carousel>
 
-    <button @click="next" class="inline-flex items-center py-2 px-4 w-64 h-16 justify-center">
+    <button @click="next" class="inline-flex items-center py-2 px-4 w-full h-16 justify-center">
       <ChevronDownIcon class="h-8 w-8 text-white hover:font-black" />
     </button>
 
