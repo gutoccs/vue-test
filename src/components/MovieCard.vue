@@ -3,7 +3,7 @@
 
   <div
     class="block rounded-lg bg-white bg-cover p-6 shadow-lg w-full	"
-    style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');">
+    :style="{ backgroundImage: `url(${movieImage})` }">
 
 
     <button
@@ -14,7 +14,7 @@
     </button>
 
     <h3 class="mt-2 text-md font-medium leading-tight text-white">
-      Card title
+      {{ movieTitle }}
     </h3>
 
   </div>
@@ -24,5 +24,10 @@
 <script setup>
 
   import { PlayIcon } from '@heroicons/vue/24/outline';
+
+  defineProps({
+    movieTitle: String,
+    movieImage: String,
+  });
 
 </script>

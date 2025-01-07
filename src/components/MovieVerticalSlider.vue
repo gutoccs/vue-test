@@ -9,7 +9,10 @@
     <Carousel v-bind="carouselConfig" ref="carouselRef" v-model="currentSlide">
 
       <Slide v-for="slide in 10" :key="slide">
-        <MovieCard />
+        <MovieCard
+          movieTitle="Movie Title"
+          movieImage="https://mdbcdn.b-cdn.net/img/new/slides/003.webp"
+          />
       </Slide>
 
     </Carousel>
