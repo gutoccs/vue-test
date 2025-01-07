@@ -6,8 +6,12 @@
    <MovieTitle />
   </section>
 
-  <section class="w-full sm:w-1/6">
+  <section class="w-full sm:w-1/6 flex flex-col">
+
    <MovieList />
+
+   <MovieVerticalSlider />
+
   </section>
 
  </main>
@@ -17,4 +21,5 @@
 <script setup>
   import MovieTitle from '@/components/MovieTitle.vue';
   import MovieList from '@/components/MovieList.vue';
+  import MovieVerticalSlider from '@/components/MovieVerticalSlider.vue';
 </script>
