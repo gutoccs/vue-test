@@ -54,10 +54,12 @@
             <span>Mi Lista</span>
           </a>
 
-          <a href="#" className="flex items-center space-x-7 py-1 mt-10 text-xl text-white hover:bg-gray-700 rounded transition duration-200">
-            <ArrowRightCircleIcon class="h-7 w-7 text-lilac-light" aria-hidden="true" />
-            <span>AGREGAR PELÍCULA</span>
-          </a>
+          <router-link :to="{ name: 'upload-movie' }">
+            <a href="#" className="flex items-center space-x-7 py-1 mt-10 text-xl text-white hover:bg-gray-700 rounded transition duration-200">
+              <ArrowRightCircleIcon class="h-7 w-7 text-lilac-light" aria-hidden="true" />
+              <span>AGREGAR PELÍCULA</span>
+            </a>
+          </router-link>
 
           <button class="inline-flex items-center bg-lilac-light hover:bg-opacity-50 text-white font-bold py-2 px-4 mt-12 rounded transition duration-200 w-64 h-16 justify-center">
             <span class="sm:block" >CERRAR SESIÓN</span>

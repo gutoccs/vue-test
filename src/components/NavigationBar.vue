@@ -14,19 +14,23 @@
           </div>
           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div class="flex shrink-0 items-center">
-              <span class="text-3xl sm:text-4xl text-lilac-light">
-                <span class="font-normal sm:font-semibold">TEST</span>FLIX
-              </span>
+              <router-link :to="{ name: 'home' }">
+                <span class="text-3xl sm:text-4xl text-lilac-light">
+                  <span class="font-normal sm:font-semibold">TEST</span>FLIX
+                </span>
+              </router-link>
             </div>
           </div>
           <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
             <div class="hidden sm:block">
               <div class="flex space-x-4">
-                <a href="#" class="inline-flex items-center text-gray-300 hover:bg-gray-700 text-white rounded-md px-3 py-2 text-md font-medium" aria-current="page">
-                  <ArrowRightCircleIcon class="w-7 h-7 mr-2 text-lilac-light" aria-hidden="true" />
-                  AGREGAR PELÍCULA
-                </a>
+                <router-link :to="{ name: 'upload-movie' }">
+                  <a href="#" class="inline-flex items-center text-gray-300 hover:bg-gray-700 text-white rounded-md px-3 py-2 text-md font-medium" aria-current="page">
+                    <ArrowRightCircleIcon class="w-7 h-7 mr-2 text-lilac-light" aria-hidden="true" />
+                    AGREGAR PELÍCULA
+                  </a>
+                </router-link>
               </div>
             </div>
 
@@ -61,6 +65,7 @@
   import MenuProfile from './ProfileDropdown.vue';
   import NotificationBell from './NotificationBell.vue';
   import SideBar from './SideBar.vue';
+import { RouterLink } from 'vue-router';
 
 
 
