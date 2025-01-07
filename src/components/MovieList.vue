@@ -22,7 +22,7 @@
 
 <script setup>
   import { ref } from 'vue';
-  import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+  import { ChevronDownIcon } from '@heroicons/vue/24/outline'
 
   const isOpen = ref(false);
   const selectedOption = ref('Tendencia');
