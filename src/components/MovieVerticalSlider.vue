@@ -1,34 +1,32 @@
 <template>
 
-  <Carousel v-bind="carouselConfig" class="mt-4">
+  <div class="mt-4">
 
-    <Slide v-for="slide in 10" :key="slide">
-      <MovieCard />
-    </Slide>
+    <button @click="prev" class="inline-flex items-center py-2 px-4 w-64 h-16 justify-center">
+      <ChevronUpIcon class="h-8 w-8 text-white hover:font-black" />
+    </button>
 
-    <template #addons>
+    <Carousel v-bind="carouselConfig" ref="carouselRef" v-model="currentSlide">
 
-      <Navigation>
+      <Slide v-for="slide in 10" :key="slide">
+        <MovieCard />
+      </Slide>
 
-        <template #prev>
-          <ChevronUpIcon class="h-8 w-10 text-white font-bold" />
-        </template>
+    </Carousel>
 
-        <template #next>
-          <ChevronDownIcon class="h-8 w-10 text-white font-bold" />
-        </template>
+    <button @click="next" class="inline-flex items-center py-2 px-4 w-64 h-16 justify-center">
+      <ChevronDownIcon class="h-8 w-8 text-white hover:font-black" />
+    </button>
 
-      </Navigation>
+  </div>
 
-    </template>
-
-  </Carousel>
 
 </template>
 
 <script setup>
+  import { ref } from 'vue';
   import 'vue3-carousel/carousel.css';
-  import { Carousel, Slide, Navigation } from 'vue3-carousel';
+  import { Carousel, Slide } from 'vue3-carousel';
   import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/vue/24/outline';
   import MovieCard from './MovieCard.vue';
 
@@ -40,4 +38,11 @@
     height: '400px',
     gap: 5,
   };
+
+  const carouselRef = ref();
+  const currentSlide = ref(0);
+
+  const next = () => carouselRef.value.next();
+  const prev = () => carouselRef.value.prev();
+
 </script>
