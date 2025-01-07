@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'lilac-light': '#D1A2FF', // Nombre personalizado para el color
+        'lilac-light': '#D1A2FF',
+        'dark-grey': '#242424',
       },
     },
   },
