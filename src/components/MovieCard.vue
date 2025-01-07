@@ -3,7 +3,7 @@
 
   <div
     class="block rounded-lg bg-white bg-cover p-6 shadow-lg w-full	"
-    :style="{ backgroundImage: `url(${movieImage})` }">
+    :style="backgroundStyle">
 
 
     <button
@@ -23,11 +23,20 @@
 
 <script setup>
 
+  import { computed } from 'vue';
   import { PlayIcon } from '@heroicons/vue/24/outline';
 
-  defineProps({
+  const props = defineProps({
     movieTitle: String,
     movieImage: String,
   });
+
+  const backgroundStyle = computed(() => {
+    const imageUrl = new URL(`../assets/img/movie-backgrounds/${props.movieImage}`, import.meta.url).href;
+    return {
+      backgroundImage: `url(${imageUrl})`,
+    };
+  });
+
 
 </script>

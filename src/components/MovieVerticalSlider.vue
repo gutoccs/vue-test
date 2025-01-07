@@ -8,11 +8,11 @@
 
     <Carousel v-bind="carouselConfig" ref="carouselRef" v-model="currentSlide">
 
-      <Slide v-for="slide in 10" :key="slide">
+      <Slide v-for="(movie, index) in movieList" :key="index">
         <MovieCard
-          movieTitle="Movie Title"
-          movieImage="https://mdbcdn.b-cdn.net/img/new/slides/003.webp"
-          />
+          :movieTitle="movie.title"
+          :movieImage="movie.image"
+        />
       </Slide>
 
     </Carousel>
@@ -27,11 +27,15 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue';
+  import { ref, computed } from 'vue';
+  import { movieManagementStore } from '@/stores/movies';
   import 'vue3-carousel/carousel.css';
   import { Carousel, Slide } from 'vue3-carousel';
   import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/vue/24/outline';
   import MovieCard from './MovieCard.vue';
+
+  const movieStore = movieManagementStore();
+  const movieList = computed(() => movieStore.getMovies);
 
   const carouselConfig = {
     dir: 'ttb',
