@@ -35,7 +35,7 @@
     wrapAround: true,
     itemsToShow: 3,
     snapAlign: 'center',
-    height: '400px',
+    height: '500px',
     gap: 5,
   };
 
