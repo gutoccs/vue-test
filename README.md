@@ -4,17 +4,27 @@ Es un proyecto de prueba en Vue
 
 Realizado por **Gustavo Escobar Cobos**
 
+
 ## Obervaciones:
 
 Es un proyecto de prueba, a pesar de ser un proyecto corto fue un reto para mi ya que tenía un montón de pequeños detalles, **por ejemplo: el cambio que sufre el Navbar en las vistas Mobile** y debo acotar que la mayoría del tiempo me he desempeñado como **Desarrollador Backend**, sin embargo me gusta salir de mi zona de comfort. 
 
 Este año me propuse ir un poco más hacia el ecosistema JS y me agradó comenzar de esta manera el año.
 
+
 ## Mejoras para realizar:
 
 + Cambiar el estilo en la subida de películas para la vista Mobile
 + El cambio que sufre el card de películas al hacer hover
 + Pequeños detalles de CSS, como por ejemplo, la última forma al indicar que se cargó la película. Creo que debe hacerse con algo llamado mask
+
+
+## Sobre la subida de películas:
+
+Gracias a un Random puedo determinar si hay un error al "subir la película o no".
+
+Dependiendo de este valor la vista cambiará acorde a ello.
+
 
 ## Paquetes usados:
 
@@ -28,6 +38,7 @@ Este año me propuse ir un poco más hacia el ecosistema JS y me agradó comenza
 + **headlessui/vue**: Me ayudó a crear el Navbar
 + **heroicons/vue**: En todo el proyecto usé sus íconos
 
+
 ## Componentes:
 
 + **MovieCard**: Es propiamente la tarjeta de películas del home.
@@ -40,6 +51,7 @@ Este año me propuse ir un poco más hacia el ecosistema JS y me agradó comenza
 + **SideBar**: Al hacer click en las 3 barras del Navbar aparecerá este conjunto de liks.
 
 *Debo pedir disculpa, redactando esta sección me he dado cuenta que los componentes no están agrupados por funcionalidad y/o sección dentro de la carpeta components*
+
 
 ## Algunas imágenes del proyecto
 
