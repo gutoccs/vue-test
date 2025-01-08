@@ -113,7 +113,7 @@
       />
     </div>
 
-    <div v-if="currentStatus == 'Done'">
+    <div v-if="['Error', 'Done'].includes(currentStatus)">
       <router-link :to="{ name: 'home' }">
         <a href="#"
           class="inline-flex items-center bg-gray-700 hover:bg-opacity-50 text-white font-bold py-2 px-4 rounded transition duration-200 w-64 h-16 justify-center"
@@ -173,8 +173,8 @@
       return {
         myFiles: [],
         movieTitle: '',
-        currentStatus: 'Done', // Initial - Uploading - Uploaded - Done - Error
-        percent: 25, // 25 50 75
+        currentStatus: 'Initial', // Initial - Uploading - Uploaded - Done - Error
+        percent: 0, // 50
       };
     },
     methods: {
@@ -201,9 +201,38 @@
               //   },
               // });
               // console.log('Archivo subido con éxito:', response.data);
-              this.myFiles = [];
-              this.movieTitle = '';
-              this.$refs.pond.removeFiles();
+
+              /* Simulando subida */
+
+              const doneOrError = Math.random() >= 0.5;
+
+              if(doneOrError)
+              {
+                // No hay error en la subida
+                this.currentStatus = 'Uploading';
+
+                let values = [25, 50, 75, 100, 'Uploaded', 'Done'];
+                let currentDelay = 0; // Inicializamos el retraso actual
+
+                values.forEach(value => {
+                  setTimeout(() => {
+                    if(Number.isInteger(value))
+                      this.percent = value;
+                    else
+                      this.currentStatus = value;
+                  }, currentDelay += 1500); // Incrementa el retraso *después* de programar el timeout
+                });
+
+              }
+              else
+              {
+                // Error en la subida
+                this.currentStatus = 'Error';
+              }
+
+              //this.myFiles = [];
+              //this.movieTitle = '';
+              //this.$refs.pond.removeFiles();
             } catch (error) {
               console.error('Error al subir el archivo:', error);
             }
