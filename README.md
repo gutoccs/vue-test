@@ -58,28 +58,28 @@ Dependiendo de este valor la vista cambiará acorde a ello.
 
 ## Algunas imágenes del proyecto
 
-<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/home_1.png?token=GHSAT0AAAAAACXRQ3SKYDOG32GW53OBZHCIZ366H2A" alt="Home 1" width="300">
+<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/home_1.png" alt="Home 1" width="300">
 
 <br>
 
-<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/home_2.png?token=GHSAT0AAAAAACXRQ3SLGAJQU3JXQA5X2TFOZ366IKQ" alt="Home 2" width="300">
+<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/home_2.png" alt="Home 2" width="300">
 
 <br>
 
-<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/home_3.png?token=GHSAT0AAAAAACXRQ3SKKA57GEJJISG4JLUWZ366IYA" alt="Home 3" width="300">
+<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/home_3.png" alt="Home 3" width="300">
 
 <br>
 
-<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/agregar_pel%C3%ADcula_1.png?token=GHSAT0AAAAAACXRQ3SLPKKXZA6CWOVVN3GYZ366JFA" alt="Agregar Película 1" width="300">
+<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/agregar_pel%C3%ADcula_1.png" alt="Agregar Película 1" width="300">
 
 <br>
 
-<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/agregar_pel%C3%ADcula_2.png?token=GHSAT0AAAAAACXRQ3SK7CXBEIPKEE6MHQKAZ366JTA" alt="Agregar Película 2" width="300">
+<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/agregar_pel%C3%ADcula_2.png" alt="Agregar Película 2" width="300">
 
 <br>
 
-<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/agregar_pel%C3%ADcula_3.png?token=GHSAT0AAAAAACXRQ3SKN5POZUUY7QUR2HCKZ366J3Q" alt="Agregar Película 3" width="300">
+<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/agregar_pel%C3%ADcula_3.png" alt="Agregar Película 3" width="300">
 
 <br>
 
-<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/agregar_pel%C3%ADcula_4.png?token=GHSAT0AAAAAACXRQ3SLLSPSCFLL57MXZJAYZ366KEA" alt="Agregar Película 4" width="300">
+<img src="https://raw.githubusercontent.com/gutoccs/vue-test/refs/heads/main/img-readme/agregar_pel%C3%ADcula_4.png" alt="Agregar Película 4" width="300">
