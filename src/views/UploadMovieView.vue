@@ -1,7 +1,9 @@
 <template>
 
   <div class="w-full sm:w-1/2 space-y-8 mx-auto p-4 bg-dark-grey text-center">
-    <h2 class="text-center text-lilac-light text-xl font-bold">AGREGAR PELÍCULA</h2>
+
+    <h2 v-if="currentStatus == 'Done'" class="text-center text-lilac-light text-4xl font-bold">TESTFLIX</h2>
+    <h2 v-else class="text-center text-lilac-light text-xl font-bold">AGREGAR PELÍCULA</h2>
 
     <div v-if="currentStatus == 'Initial'">
       <file-pond
@@ -84,7 +86,24 @@
 
     </div>
 
-    <div>
+
+    <div v-if="currentStatus == 'Done'" class="flex flex-col items-center">
+
+      <div class="flex justify-center items-center px-4">
+
+        <div class="relative w-48 h-48">
+          <div class="absolute inset-0 rounded-full bg-lilac-light z-10 wave-border"></div>
+          <CheckIcon class="absolute inset-0 w-16 h-16 mx-auto my-auto text-white z-20 font-bold" />
+        </div>
+
+      </div>
+
+    </div>
+
+    <div  v-if="currentStatus == 'Done'">
+      <span class="text-white text-xl">"{{ movieTitle }}" fue correctamente subida</span>
+    </div>
+    <div v-else>
       <input
         type="text"
         id="movieTitle"
@@ -94,12 +113,29 @@
       />
     </div>
 
-    <button
-      class="inline-flex items-center bg-gray-700 hover:bg-opacity-50 text-white font-bold py-2 px-4 rounded transition duration-200 w-64 h-16 justify-center"
-      @click="uploadMovie"
-      :disabled="!myFiles.length || !movieTitle">
-      SUBIR PELÍCULA
-    </button>
+    <div v-if="currentStatus == 'Done'">
+      <router-link :to="{ name: 'home' }">
+        <a href="#"
+          class="inline-flex items-center bg-gray-700 hover:bg-opacity-50 text-white font-bold py-2 px-4 rounded transition duration-200 w-64 h-16 justify-center"
+          :disabled="!myFiles.length || !movieTitle">
+          IR A HOME
+        </a>
+      </router-link>
+    </div>
+
+    <div v-else>
+      <button
+        class="inline-flex items-center bg-gray-700 hover:bg-opacity-50 text-white font-bold py-2 px-4 rounded transition duration-200 w-64 h-16 justify-center"
+        @click="uploadMovie"
+        :disabled="!myFiles.length || !movieTitle">
+        SUBIR PELÍCULA
+      </button>
+    </div>
+
+
+
+
+
 
   </div>
 
@@ -114,6 +150,8 @@
   import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
   import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
   import CircleProgress from 'vue3-circle-progress';
+  import { CheckIcon } from '@heroicons/vue/24/outline';
+  import { RouterLink } from 'vue-router';
   // import axios from 'axios'; -> Es innecesario...
 
   const FilePond = vueFilePond(
@@ -128,12 +166,14 @@
     components: {
       FilePond,
       CircleProgress,
+      CheckIcon,
+      RouterLink
     },
     data() {
       return {
         myFiles: [],
         movieTitle: '',
-        currentStatus: 'Uploaded', // Initial - Uploading - Uploaded - Done - Error
+        currentStatus: 'Done', // Initial - Uploading - Uploaded - Done - Error
         percent: 25, // 25 50 75
       };
     },
