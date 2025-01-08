@@ -61,6 +61,29 @@
 
     </div>
 
+    <div v-if="currentStatus == 'Uploaded'" class="flex flex-col items-center">
+
+      <div class="w-full flex justify-between items-start px-4">
+        <div>
+          <span class="text-white text-lg block">Cargado</span>
+          <span class="text-white text-3xl block">100%</span>
+        </div>
+
+        <circle-progress
+          :size="200"
+          :percent="100"
+          :fill-color="'#D1A2FF'"
+          class="my-4"
+        />
+
+        <div class="flex justify-end mt-auto px-4">
+          <span class="text-white text-lg cursor-pointer block">Listo</span>
+        </div>
+
+      </div>
+
+    </div>
+
     <div>
       <input
         type="text"
@@ -110,7 +133,7 @@
       return {
         myFiles: [],
         movieTitle: '',
-        currentStatus: 'Error', // Initial - Uploading - Uploaded 100% - Done - Error
+        currentStatus: 'Uploaded', // Initial - Uploading - Uploaded - Done - Error
         percent: 25, // 25 50 75
       };
     },
