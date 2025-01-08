@@ -42,6 +42,25 @@
 
     </div>
 
+    <div v-if="currentStatus == 'Error'" class="flex flex-col items-center">
+
+      <div class="w-full flex items-start px-4">
+
+        <div class="w-1/4 sm:w-1/3 text-left">
+          <span class="text-white text-lg block">No se pudo cargar el archivo...</span>
+        </div>
+
+        <circle-progress
+          :size="200"
+          :percent="100"
+          :fill-color="'#FF0000'"
+          class="my-4 max-w-40"
+        />
+
+      </div>
+
+    </div>
+
     <div>
       <input
         type="text"
@@ -91,7 +110,7 @@
       return {
         myFiles: [],
         movieTitle: '',
-        currentStatus: 'Uploading', // Initial - Uploading - Uploaded 100% - Done - Error
+        currentStatus: 'Error', // Initial - Uploading - Uploaded 100% - Done - Error
         percent: 25, // 25 50 75
       };
     },
