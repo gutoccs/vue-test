@@ -1,9 +1,9 @@
 <template>
 
-  <div class="w-full md:w-1/2 lg:w-1/3 space-y-8 mx-auto p-4 bg-dark-grey text-center">
+  <div class="w-full sm:w-1/2 space-y-8 mx-auto p-4 bg-dark-grey text-center">
     <h2 class="text-center text-lilac-light text-xl font-bold">AGREGAR PELÍCULA</h2>
 
-    <div>
+    <div v-if="currentStatus == 'Initial'">
       <file-pond
         name="test"
         ref="pond"
@@ -17,6 +17,29 @@
         @init="handleFilePondInit"
         @updatefiles="handleUpdateFiles"
       />
+    </div>
+
+    <div v-if="currentStatus == 'Uploading'" class="flex flex-col items-center">
+
+      <div class="w-full flex justify-between items-start px-4">
+        <div>
+          <span class="text-white text-lg block">Cargando...</span>
+          <span class="text-white text-3xl block">{{ percent }}%</span>
+        </div>
+
+        <circle-progress
+          :size="200"
+          :percent="percent"
+          :fill-color="'#D1A2FF'"
+          class="my-4"
+        />
+
+        <div class="flex justify-end mt-auto px-4">
+          <span class="text-white text-lg cursor-pointer block">Cancelar</span>
+        </div>
+
+      </div>
+
     </div>
 
     <div>
@@ -48,22 +71,28 @@
   import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css';
   import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
   import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
-  // import axios from 'axios';
+  import CircleProgress from 'vue3-circle-progress';
+  // import axios from 'axios'; -> Es innecesario...
 
   const FilePond = vueFilePond(
     FilePondPluginFileValidateType,
     FilePondPluginImagePreview
   );
 
+
+
   export default {
     name: 'app',
     components: {
       FilePond,
+      CircleProgress,
     },
     data() {
       return {
         myFiles: [],
         movieTitle: '',
+        currentStatus: 'Uploading', // Initial - Uploading - Uploaded 100% - Done - Error
+        percent: 25, // 25 50 75
       };
     },
     methods: {
